@@ -1,0 +1,1 @@
+java -cp simlib.jar;. sim.CarbotSim -e spiral_environment.txt  -c democontroller.DriveSpiral

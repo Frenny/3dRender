@@ -1,0 +1,385 @@
+ROBOT 100.0 100.0 0
+ROBOTCONTROLLER 900.0;900.0;0;inc
+KEYPOINTS 25 25 10 250
+
+// Alle Waende in x-Richtung
+// Untere Wand der Zelle 0, 0
+WALL KEYPOINTS
+  15.0 -15.0
+  15.0 15.0
+  215.0 15.0
+  215.0 -15.0
+ENDWALL
+// Untere Wand der Zelle 0, 3
+BOX KEYPOINTS
+  15.0 585.0
+  15.0 615.0
+  215.0 615.0
+  215.0 585.0
+ENDBOX
+// Untere Wand der Zelle 0, 10
+WALL KEYPOINTS
+  15.0 1985.0
+  15.0 2015.0
+  215.0 2015.0
+  215.0 1985.0
+ENDWALL
+// Untere Wand der Zelle 1, 0
+WALL KEYPOINTS
+  185.0 -15.0
+  185.0 15.0
+  415.0 15.0
+  415.0 -15.0
+ENDWALL
+// Untere Wand der Zelle 1, 6
+BOX KEYPOINTS
+  185.0 1185.0
+  185.0 1215.0
+  415.0 1215.0
+  415.0 1185.0
+ENDBOX
+// Untere Wand der Zelle 1, 7
+BOX KEYPOINTS
+  185.0 1385.0
+  185.0 1415.0
+  415.0 1415.0
+  415.0 1385.0
+ENDBOX
+// Untere Wand der Zelle 1, 10
+WALL KEYPOINTS
+  185.0 1985.0
+  185.0 2015.0
+  415.0 2015.0
+  415.0 1985.0
+ENDWALL
+// Untere Wand der Zelle 2, 0
+WALL KEYPOINTS
+  385.0 -15.0
+  385.0 15.0
+  615.0 15.0
+  615.0 -15.0
+ENDWALL
+// Untere Wand der Zelle 2, 6
+BOX KEYPOINTS
+  385.0 1185.0
+  385.0 1215.0
+  615.0 1215.0
+  615.0 1185.0
+ENDBOX
+// Untere Wand der Zelle 2, 10
+WALL KEYPOINTS
+  385.0 1985.0
+  385.0 2015.0
+  615.0 2015.0
+  615.0 1985.0
+ENDWALL
+// Untere Wand der Zelle 3, 0
+WALL KEYPOINTS
+  585.0 -15.0
+  585.0 15.0
+  785.0 15.0
+  785.0 -15.0
+ENDWALL
+// Untere Wand der Zelle 3, 4
+BOX KEYPOINTS
+  585.0 785.0
+  585.0 815.0
+  785.0 815.0
+  785.0 785.0
+ENDBOX
+// Untere Wand der Zelle 3, 6
+BOX KEYPOINTS
+  585.0 1185.0
+  585.0 1215.0
+  785.0 1215.0
+  785.0 1185.0
+ENDBOX
+// Untere Wand der Zelle 3, 10
+WALL KEYPOINTS
+  585.0 1985.0
+  585.0 2015.0
+  785.0 2015.0
+  785.0 1985.0
+ENDWALL
+
+// Alle Waende in y-Richtung
+// Linke Wand der Zelle 0, 0
+WALL KEYPOINTS
+  -15.0 15.0
+  -15.0 200.0
+  15.0 200.0
+  15.0 15.0
+ENDWALL
+// Linke Wand der Zelle 2, 0
+BOX KEYPOINTS
+  385.0 15.0
+  385.0 200.0
+  415.0 200.0
+  415.0 15.0
+ENDBOX
+// Linke Wand der Zelle 3, 0
+BOX KEYPOINTS
+  585.0 15.0
+  585.0 200.0
+  615.0 200.0
+  615.0 15.0
+ENDBOX
+// Linke Wand der Zelle 4, 0
+WALL KEYPOINTS
+  785.0 15.0
+  785.0 200.0
+  815.0 200.0
+  815.0 15.0
+ENDWALL
+// Linke Wand der Zelle 0, 1
+WALL KEYPOINTS
+  -15.0 200.0
+  -15.0 400.0
+  15.0 400.0
+  15.0 200.0
+ENDWALL
+// Linke Wand der Zelle 1, 1
+BOX KEYPOINTS
+  185.0 200.0
+  185.0 400.0
+  215.0 400.0
+  215.0 200.0
+ENDBOX
+// Linke Wand der Zelle 2, 1
+BOX KEYPOINTS
+  385.0 200.0
+  385.0 400.0
+  415.0 400.0
+  415.0 200.0
+ENDBOX
+// Linke Wand der Zelle 4, 1
+WALL KEYPOINTS
+  785.0 200.0
+  785.0 400.0
+  815.0 400.0
+  815.0 200.0
+ENDWALL
+// Linke Wand der Zelle 0, 2
+WALL KEYPOINTS
+  -15.0 400.0
+  -15.0 600.0
+  15.0 600.0
+  15.0 400.0
+ENDWALL
+// Linke Wand der Zelle 1, 2
+BOX KEYPOINTS
+  185.0 400.0
+  185.0 600.0
+  215.0 600.0
+  215.0 400.0
+ENDBOX
+// Linke Wand der Zelle 2, 2
+BOX KEYPOINTS
+  385.0 400.0
+  385.0 600.0
+  415.0 600.0
+  415.0 400.0
+ENDBOX
+// Linke Wand der Zelle 3, 2
+BOX KEYPOINTS
+  585.0 400.0
+  585.0 600.0
+  615.0 600.0
+  615.0 400.0
+ENDBOX
+// Linke Wand der Zelle 4, 2
+WALL KEYPOINTS
+  785.0 400.0
+  785.0 600.0
+  815.0 600.0
+  815.0 400.0
+ENDWALL
+// Linke Wand der Zelle 0, 3
+WALL KEYPOINTS
+  -15.0 600.0
+  -15.0 800.0
+  15.0 800.0
+  15.0 600.0
+ENDWALL
+// Linke Wand der Zelle 1, 3
+BOX KEYPOINTS
+  185.0 600.0
+  185.0 800.0
+  215.0 800.0
+  215.0 600.0
+ENDBOX
+// Linke Wand der Zelle 2, 3
+BOX KEYPOINTS
+  385.0 600.0
+  385.0 800.0
+  415.0 800.0
+  415.0 600.0
+ENDBOX
+// Linke Wand der Zelle 3, 3
+BOX KEYPOINTS
+  585.0 600.0
+  585.0 800.0
+  615.0 800.0
+  615.0 600.0
+ENDBOX
+// Linke Wand der Zelle 4, 3
+WALL KEYPOINTS
+  785.0 600.0
+  785.0 800.0
+  815.0 800.0
+  815.0 600.0
+ENDWALL
+// Linke Wand der Zelle 0, 4
+WALL KEYPOINTS
+  -15.0 800.0
+  -15.0 1000.0
+  15.0 1000.0
+  15.0 800.0
+ENDWALL
+// Linke Wand der Zelle 1, 4
+BOX KEYPOINTS
+  185.0 800.0
+  185.0 1000.0
+  215.0 1000.0
+  215.0 800.0
+ENDBOX
+// Linke Wand der Zelle 2, 4
+BOX KEYPOINTS
+  385.0 800.0
+  385.0 1000.0
+  415.0 1000.0
+  415.0 800.0
+ENDBOX
+// Linke Wand der Zelle 4, 4
+WALL KEYPOINTS
+  785.0 800.0
+  785.0 1000.0
+  815.0 1000.0
+  815.0 800.0
+ENDWALL
+// Linke Wand der Zelle 0, 5
+WALL KEYPOINTS
+  -15.0 1000.0
+  -15.0 1200.0
+  15.0 1200.0
+  15.0 1000.0
+ENDWALL
+// Linke Wand der Zelle 3, 5
+BOX KEYPOINTS
+  585.0 1000.0
+  585.0 1200.0
+  615.0 1200.0
+  615.0 1000.0
+ENDBOX
+// Linke Wand der Zelle 4, 5
+WALL KEYPOINTS
+  785.0 1000.0
+  785.0 1200.0
+  815.0 1200.0
+  815.0 1000.0
+ENDWALL
+// Linke Wand der Zelle 0, 6
+WALL KEYPOINTS
+  -15.0 1200.0
+  -15.0 1400.0
+  15.0 1400.0
+  15.0 1200.0
+ENDWALL
+// Linke Wand der Zelle 3, 6
+BOX KEYPOINTS
+  585.0 1200.0
+  585.0 1400.0
+  615.0 1400.0
+  615.0 1200.0
+ENDBOX
+// Linke Wand der Zelle 4, 6
+WALL KEYPOINTS
+  785.0 1200.0
+  785.0 1400.0
+  815.0 1400.0
+  815.0 1200.0
+ENDWALL
+// Linke Wand der Zelle 0, 7
+WALL KEYPOINTS
+  -15.0 1400.0
+  -15.0 1600.0
+  15.0 1600.0
+  15.0 1400.0
+ENDWALL
+// Linke Wand der Zelle 1, 7
+BOX KEYPOINTS
+  185.0 1400.0
+  185.0 1600.0
+  215.0 1600.0
+  215.0 1400.0
+ENDBOX
+// Linke Wand der Zelle 2, 7
+BOX KEYPOINTS
+  385.0 1400.0
+  385.0 1600.0
+  415.0 1600.0
+  415.0 1400.0
+ENDBOX
+// Linke Wand der Zelle 3, 7
+BOX KEYPOINTS
+  585.0 1400.0
+  585.0 1600.0
+  615.0 1600.0
+  615.0 1400.0
+ENDBOX
+// Linke Wand der Zelle 4, 7
+WALL KEYPOINTS
+  785.0 1400.0
+  785.0 1600.0
+  815.0 1600.0
+  815.0 1400.0
+ENDWALL
+// Linke Wand der Zelle 0, 8
+WALL KEYPOINTS
+  -15.0 1600.0
+  -15.0 1800.0
+  15.0 1800.0
+  15.0 1600.0
+ENDWALL
+// Linke Wand der Zelle 1, 8
+BOX KEYPOINTS
+  185.0 1600.0
+  185.0 1800.0
+  215.0 1800.0
+  215.0 1600.0
+ENDBOX
+// Linke Wand der Zelle 2, 8
+BOX KEYPOINTS
+  385.0 1600.0
+  385.0 1800.0
+  415.0 1800.0
+  415.0 1600.0
+ENDBOX
+// Linke Wand der Zelle 4, 8
+WALL KEYPOINTS
+  785.0 1600.0
+  785.0 1800.0
+  815.0 1800.0
+  815.0 1600.0
+ENDWALL
+// Linke Wand der Zelle 0, 9
+WALL KEYPOINTS
+  -15.0 1800.0
+  -15.0 1985.0
+  15.0 1985.0
+  15.0 1800.0
+ENDWALL
+// Linke Wand der Zelle 2, 9
+BOX KEYPOINTS
+  385.0 1800.0
+  385.0 1985.0
+  415.0 1985.0
+  415.0 1800.0
+ENDBOX
+// Linke Wand der Zelle 3, 9
+BOX KEYPOINTS
+  585.0 1800.0
+  585.0 1985.0
+  615.0 1985.0
+  615.0 1800.0
+ENDBOX

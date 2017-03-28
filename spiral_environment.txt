@@ -1,0 +1,113 @@
+ROBOT 20 0 10   // Start-Position x, y, alpha
+//ROBOT 20 -30 10
+
+CAMERA 640 480
+
+
+
+OBSTACLE  KEYPOINTS   // Hindernis-Box
+RECT 50 150 60 30
+ENDOBSTACLE
+
+
+OBSTACLE  KEYPOINTS   // Hindernis-Zylinder
+CIRCLE -100 -100 50
+ENDOBSTACLE
+
+WALL  KEYPOINTS   // Wall-Zylinder
+CIRCLE -100 -300 50
+ENDWALL
+
+
+
+WALL KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 120 -120 20
+ENDWALL
+
+FLAT KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 170 -170 20
+ENDFLAT
+
+OBSTACLE  KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 300 -150 20
+ENDOBSTACLE
+
+WALL  KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 100 -350 20
+ENDWALL
+
+OBSTACLE  KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 300 0 20
+ENDOBSTACLE
+
+FLAT  KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 320 40 20
+ENDFLAT
+
+OBSTACLE  KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 200 100 20
+ENDOBSTACLE
+
+WALL  KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 350 140 20
+ENDWALL
+
+WALL  KEYPOINTS   // Dünner Hindernis-Zylinder
+CIRCLE 350 200 20
+ENDWALL
+
+
+FLAT  KEYPOINTS   // Auf dem Boden - Ultraschall sieht das nicht
+CIRCLE -100 100 50
+ENDFLAT
+
+
+OBSTACLE  KEYPOINTS   // Hindernis-Wand oben
+RECT 350 300 100 10
+ENDOBSTACLE
+
+
+OBSTACLE  KEYPOINTS   // Hindernis-Wand oben
+RECT 150 300 100 10
+ENDOBSTACLE
+
+
+
+WALL  KEYPOINTS   // 2. Hindernis-Wand oben
+RECT 350 350 100 10
+ENDWALL
+
+
+WALL  KEYPOINTS   // 2. Hindernis-Wand oben
+RECT 150 350 100 10
+ENDWALL
+
+
+WALL  KEYPOINTS   // Wand Süd
+-720 -500
+-720 -520
+ 720 -520
+ 720 -500
+ENDWALL
+
+WALL  KEYPOINTS   // Wand Nord
+-720  500
+ 720  500
+ 720  520
+-720  520
+ENDWALL
+
+WALL  KEYPOINTS   // Wand Ost
+ 700  -520
+ 720  -520
+ 720   520
+ 700   520
+ENDWALL
+
+WALL  KEYPOINTS   // Wand West
+-700  -520
+-700   520
+-720   520
+-720  -520
+ENDWALL
+

@@ -1,0 +1,1 @@
+java -cp simlib.jar;. sim.CarbotSim -e nav_environment3.txt -c democontroller.Navigate
