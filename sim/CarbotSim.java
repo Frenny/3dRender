@@ -1662,11 +1662,13 @@ public class CarbotSim extends JFrame implements ActionListener,ChangeListener,W
         }
         else if (e.getSource()==clearTrackButton) {
             simCanvas.clearTrack();
+            camera3D.clearTrack();
         }
         else if (e.getSource()==resetButton) {
             simCanvas.disableCopyright();
             environment.setInitialPosition();
             simCanvas.clearTrack();
+            camera3D.clearTrack();
             
             if (controllerInstance.isRunning()) {
                 controllerInstance.setStateStop();                

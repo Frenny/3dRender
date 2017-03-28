@@ -119,11 +119,11 @@ public class SimCanvas extends JComponent implements MouseMotionListener,MouseLi
     public static boolean showUS=true;
     public static boolean showTrack=true;
     public static boolean showTyreTracks=true;
-    private static ArrayList<double[]> track=new ArrayList<>(MAX_TRACK_ENTRIES+10);
-    private static ArrayList<double[]> tyreTrackFrontLeft=new ArrayList<>(MAX_TRACK_ENTRIES+10);
-    private static ArrayList<double[]> tyreTrackFrontRight=new ArrayList<>(MAX_TRACK_ENTRIES+10);
-    private static ArrayList<double[]> tyreTrackBackLeft=new ArrayList<>(MAX_TRACK_ENTRIES+10);
-    private static ArrayList<double[]> tyreTrackBackRight=new ArrayList<>(MAX_TRACK_ENTRIES+10);
+    public static ArrayList<double[]> track=new ArrayList<>(MAX_TRACK_ENTRIES+10);
+    public static ArrayList<double[]> tyreTrackFrontLeft=new ArrayList<>(MAX_TRACK_ENTRIES+10);
+    public static ArrayList<double[]> tyreTrackFrontRight=new ArrayList<>(MAX_TRACK_ENTRIES+10);
+    public static ArrayList<double[]> tyreTrackBackLeft=new ArrayList<>(MAX_TRACK_ENTRIES+10);
+    public static ArrayList<double[]> tyreTrackBackRight=new ArrayList<>(MAX_TRACK_ENTRIES+10);
 
     public static void clearTrack() {
         track=new ArrayList<>(MAX_TRACK_ENTRIES+10);

@@ -1,5 +1,6 @@
 package sim.camera3d;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.scene.AmbientLight;
@@ -8,9 +9,17 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
+import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Shape3D;
+import sim.SimCanvas;
 
 public class World extends Group {
+	
+	private ArrayList<Cylinder> trackPoints = new ArrayList<>();
+	private ArrayList<double[]> tyreTrackFrontLeft = new ArrayList<>();
+	private ArrayList<double[]> tyreTrackFrontRight = new ArrayList<>();
+	private ArrayList<double[]> tyreTrackBackLeft = new ArrayList<>();
+	private ArrayList<double[]> tyreTrackBackRight = new ArrayList<>();
 	
 	public World() {
 		super();
@@ -50,5 +59,53 @@ public class World extends Group {
 		for(Shape3D shape : shapes) {
 	    	this.addShape3D(shape);
 	    }
+	}
+	
+	public void refreshTrack() {
+		for(double[] point : SimCanvas.tyreTrackFrontLeft) {
+			if(!tyreTrackFrontLeft.contains(point)) {
+				addTrack(point);
+				tyreTrackFrontLeft.add(point);
+			}
+		}
+		for(double[] point : SimCanvas.tyreTrackFrontRight) {
+			if(!tyreTrackFrontRight.contains(point)) {
+				addTrack(point);
+				tyreTrackFrontRight.add(point);
+			}
+		}
+		for(double[] point : SimCanvas.tyreTrackBackLeft) {
+			if(!tyreTrackBackLeft.contains(point)) {
+				addTrack(point);
+				tyreTrackBackLeft.add(point);
+			}
+		}
+		for(double[] point : SimCanvas.tyreTrackBackRight) {
+			if(!tyreTrackBackRight.contains(point)) {
+				addTrack(point);
+				tyreTrackBackRight.add(point);
+			}
+		}
+	}
+	
+	private void addTrack(double[] point) {
+		Cylinder trackPoint = new Cylinder(1, 0);
+		trackPoint.setTranslateX(point[0]);
+		trackPoint.setTranslateY(-1);
+		trackPoint.setTranslateZ(point[1]);
+		
+		trackPoint.setMaterial(new PhongMaterial(Color.LIGHTGRAY));
+		
+		trackPoints.add(trackPoint);
+		addShape3D(trackPoint);
+	}
+	
+	public void clearTrack() {
+		getChildren().removeAll(trackPoints);
+		trackPoints.clear();
+		tyreTrackFrontLeft.clear();
+		tyreTrackFrontRight.clear();
+		tyreTrackBackLeft.clear();
+		tyreTrackBackRight.clear();
 	}
 }

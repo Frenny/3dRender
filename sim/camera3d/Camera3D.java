@@ -5,10 +5,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape3D;
 import sim.Bounds;
+import sim.SimCanvas;
 
 public class Camera3D extends JFXPanel {
 	
@@ -65,12 +67,29 @@ public class Camera3D extends JFXPanel {
 		  @Override
 		  public void run() {
 			  scene.updateCameraPosition();
+			  drawTrack();
 		  }
 		}, 0, REFRESH_EVERY_MILLISECONDS, TimeUnit.MILLISECONDS);
 	}
 	
 	public void stopSimulation() {
 		executor.shutdown();
+	}
+	
+	public void drawTrack() {
+		Platform.runLater(new Runnable() {
+            public void run() {
+            	 world.refreshTrack();
+            }
+		});	
+	}
+	
+	public void clearTrack() {
+		Platform.runLater(new Runnable() {
+            public void run() {
+            	world.clearTrack();
+            }
+		});	
 	}
 	
 	private Bounds calculateBounds(Bounds parentBounds, CameraSize cameraSize, CameraLocation cameraLocation) {
