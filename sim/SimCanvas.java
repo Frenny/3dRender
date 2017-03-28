@@ -86,7 +86,7 @@ public class SimCanvas extends JComponent implements MouseMotionListener,MouseLi
     private final static long REPAINT_CYCLE=40;          // Refresh-Rate des Canvas (vorher 10, das hat das System aber zu stark belastet)
     private final static long COPYRIGHT_TIME=4000;       // Wie lange soll das Copyright erscheinen
     private final static double TRACK_MINSQRDIST=25;     // Mindestfahrt in cm, um einen neuen Track-Eintrag einzuf�gen (zum Quadrat)
-    private final static int MAX_TRACK_ENTRIES=500;      // Maximal Anzahl der Track-Eintr�ge
+    public final static int MAX_TRACK_ENTRIES=500;      // Maximal Anzahl der Track-Eintr�ge
 
 
     private final static double PIDIV180=Math.PI/180.0d;

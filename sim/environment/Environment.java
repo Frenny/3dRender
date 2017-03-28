@@ -657,7 +657,7 @@ public class Environment {
          result.add(last);
          for (int i=1;i<positions.size();i++) {
               double[] next=positions.get(i);
-              /*double dist=Math.sqrt((next[0]-last[0])*(next[0]-last[0])+(next[1]-last[1])*(next[1]-last[1]));
+              double dist=Math.sqrt((next[0]-last[0])*(next[0]-last[0])+(next[1]-last[1])*(next[1]-last[1]));
               if (dist>100) {
                    int cnt=(int)Math.round(dist/100);
                    double newDist=dist/cnt;
@@ -667,7 +667,7 @@ public class Environment {
                             last[1]+(next[1]-last[1])*j/cnt,
                          });
                    }
-              }*/
+              }
               result.add(next);
               last=next;
          }

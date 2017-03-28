@@ -58,28 +58,28 @@ public class Obstacle extends MeshView {
 		//4,0, 6,0, 5,0 => Dach (Sonderbehandlung)
 		//6,0, 4,0, 7,0 => Dach (Sonderbehandlung)
 		
-		//Boden: n-2 Dreicke nötig, wobei n die Anzahl der Punkte ist
+		//Boden: n-2 Dreicke nï¿½tig, wobei n die Anzahl der Punkte ist
 		for(int i=0; i <= keypoints.length-2;i+=2) {
 			triangleMesh.getFaces().addAll(i,0, (i+2)%(keypoints.length),0, (i+1),0);
 		}
 
 		
-		//Seiten: 2*n Dreicke nötig, wobei n die Anzahl der Punkte ist
+		//Seiten: 2*n Dreicke nï¿½tig, wobei n die Anzahl der Punkte ist
 		for(int i=0; i < keypoints.length-1;i++) {
 			triangleMesh.getFaces().addAll((i+keypoints.length),0, (i+keypoints.length+1),0, (i+1),0);
 			triangleMesh.getFaces().addAll(i,0, (i+keypoints.length),0, (i+1),0);
 		}
 		
-		//Sonderbehandlung der bei den letzen beiden: Übergang von n zu 0!
+		//Sonderbehandlung der bei den letzen beiden: ï¿½bergang von n zu 0!
 		triangleMesh.getFaces().addAll((2*keypoints.length-1),0, keypoints.length,0, 0,0);
 		triangleMesh.getFaces().addAll((keypoints.length-1),0, (2*keypoints.length-1),0, 0,0);
 		
-		//Dach:  n-2 Dreicke nötig, wobei n die Anzahl der Punkte ist
+		//Dach:  n-2 Dreicke nï¿½tig, wobei n die Anzahl der Punkte ist
 		for(int i=keypoints.length; i < 2*keypoints.length-2;i+=2) {
 			triangleMesh.getFaces().addAll(i,0, (i+2),0, (i+1),0);
 		}		
 		
-		//Sonderbehandlung des letzen: Übergang von n zu 0!
+		//Sonderbehandlung des letzen: ï¿½bergang von n zu 0!
 		if(keypoints.length != 3) {
 			triangleMesh.getFaces().addAll((2*keypoints.length-2),0, keypoints.length,0, (2*keypoints.length-1),0);
 		}
@@ -88,7 +88,7 @@ public class Obstacle extends MeshView {
 		this.setMesh(triangleMesh);
 		this.setCullFace(CullFace.NONE); //verhindert das Flackern der Mesh-Objekte
 		this.setMaterial(material);
-		this.setTranslateY(-height); //Höhe anpassen
+		this.setTranslateY(-height); //Hï¿½he anpassen
 		
 
 	}

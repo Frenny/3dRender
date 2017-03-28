@@ -21,9 +21,8 @@ public class Environment3D {
 		for(sim.environment.Wall wall : Environment.walls) {
 			if(wall.type == 0) {
 					shapes.add(new Obstacle(wall.positions, new PhongMaterial(Color.DARKRED), wall.height));
-
 			} else if(wall.type == 1) {
-				//TODO: Flat .. Was ist das überhaupt?
+				//TODO: Flat .. Was ist das ï¿½berhaupt?
 			} else if(wall.type == 2) {
 				if(wall.positions.length == 20) {
 					shapes.add(new Cylinder(wall.positions, new PhongMaterial(Color.LIMEGREEN), wall.height));
