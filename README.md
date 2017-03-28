@@ -16,3 +16,4 @@
 - [ ] Himmel und Boden mit Texturen zeichen (evtl. SubScene oder 2D-Grafik)
 - [ ] WireFrame-Ansicht (trivial)
 - [ ] Optimieren und dem Code eine saubere Struktur versehen
+- [ ] Kamera ist noch nicht exakt positioniert (minimaler Unterschied zur bisherigen Ansicht)
