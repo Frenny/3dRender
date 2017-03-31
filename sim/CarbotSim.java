@@ -84,7 +84,6 @@ import sim.util.MSSEstimator;
 import sim.camera3d.CameraLocation;
 import sim.camera3d.CameraSize;
 import sim.camera3d.Environment3D;
-import sim.camera3d.objects.Wall;
 import sim.camera3d.Camera3D;
 import sim.customsim.Customize2DKeypoints;
 import sim.customsim.Customize3DKeypoints;

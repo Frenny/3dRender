@@ -9,17 +9,16 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
-import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Shape3D;
 import sim.SimCanvas;
 import sim.camera3d.objects.Track;
 
 public class World extends Group {
 	
-	private ArrayList<Track> tyreTrackFrontLeft = new ArrayList<>();
-	private ArrayList<Track> tyreTrackFrontRight = new ArrayList<>();
-	private ArrayList<Track> tyreTrackBackLeft = new ArrayList<>();
-	private ArrayList<Track> tyreTrackBackRight = new ArrayList<>();
+	List<Track> tyreTrackFrontLeft = new ArrayList<>();
+	List<Track> tyreTrackFrontRight = new ArrayList<>();
+	List<Track> tyreTrackBackLeft = new ArrayList<>();
+	List<Track> tyreTrackBackRight = new ArrayList<>();
 	
 	public World() {
 		super();
@@ -61,37 +60,11 @@ public class World extends Group {
 	    }
 	}
 	
-	public void refreshTrack() {
-		addTrackIfNeeded(SimCanvas.tyreTrackFrontLeft, tyreTrackFrontLeft, SimCanvas.MAX_TRACK_ENTRIES);
-		addTrackIfNeeded(SimCanvas.tyreTrackFrontRight, tyreTrackFrontRight, SimCanvas.MAX_TRACK_ENTRIES);
-		addTrackIfNeeded(SimCanvas.tyreTrackBackLeft, tyreTrackBackLeft, SimCanvas.MAX_TRACK_ENTRIES);
-		addTrackIfNeeded(SimCanvas.tyreTrackBackRight, tyreTrackBackRight, SimCanvas.MAX_TRACK_ENTRIES);
-	}
-	
-	private void addTrackIfNeeded(final List<double[]> simCanvasTrack, final List<Track> tyreTrack, final int maxTrackEntries) {
-		if (tyreTrack.size() >= maxTrackEntries) {
-			getChildren().remove(tyreTrack.get(0));
-			tyreTrack.remove(0);
-		}
-		
-		int lastIndex = simCanvasTrack.size() - 1;
-		int lastTyreIndex = tyreTrack.size() - 1;
-		
-		if(lastIndex >= 0) {
-			double[] lastPoint = simCanvasTrack.get(lastIndex);
-			if(lastTyreIndex < 0) {
-				Track track = new Track(lastPoint);
-				tyreTrack.add(track);
-				addShape3D(track);
-			} else {
-				Track lastTrack = tyreTrack.get(lastTyreIndex);
-				if(lastTrack.getKeypoint() != lastPoint) {
-					Track track = new Track(lastPoint);
-					tyreTrack.add(track);
-					addShape3D(track);
-				}
-			}
-		}
+	public void refreshTracks() {
+		addTrack(SimCanvas.tyreTrackFrontLeft, tyreTrackFrontLeft);
+		addTrack(SimCanvas.tyreTrackFrontRight, tyreTrackFrontRight);
+		addTrack(SimCanvas.tyreTrackBackLeft, tyreTrackBackLeft);
+		addTrack(SimCanvas.tyreTrackBackRight, tyreTrackBackRight);
 	}
 	
 	public void clearTrack() {
@@ -103,5 +76,32 @@ public class World extends Group {
 		tyreTrackFrontRight.clear();
 		tyreTrackBackLeft.clear();
 		tyreTrackBackRight.clear();
+	}
+	
+	private void addTrack(final List<double[]> simCanvasTrack, final List<Track> tyreTrack) {
+		if (tyreTrack.size() >= SimCanvas.MAX_TRACK_ENTRIES) {
+			getChildren().remove(tyreTrack.get(0));
+			tyreTrack.remove(0);
+		}
+		
+		int lastTrackIndex = simCanvasTrack.size() - 1;
+		int lastDrawedTrackIndex = tyreTrack.size() - 1;
+		
+		if(lastTrackIndex >= 0) {
+			double[] position = simCanvasTrack.get(lastTrackIndex);
+			if(lastDrawedTrackIndex >= 0) {
+				if(tyreTrack.get(lastDrawedTrackIndex).getKeypoint() != position) {
+					drawTrack(position, tyreTrack);
+				}
+			} else {
+				drawTrack(position, tyreTrack);
+			}
+		}
+	}
+	
+	private void drawTrack(double[] position, final List<Track> tyreTrack) {
+		Track track = new Track(position);
+		tyreTrack.add(track);
+		addShape3D(track);
 	}
 }

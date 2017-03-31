@@ -7,10 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape3D;
 import sim.Bounds;
-import sim.SimCanvas;
 
 public class Camera3D extends JFXPanel {
 	
@@ -66,7 +64,7 @@ public class Camera3D extends JFXPanel {
 		executor.scheduleAtFixedRate(new Runnable() {
 		  @Override
 		  public void run() {
-			  scene.updateCameraPosition();
+			  refreshCamera();
 			  refreshTrack();
 		  }
 		}, 0, REFRESH_EVERY_MILLISECONDS, TimeUnit.MILLISECONDS);
@@ -76,10 +74,18 @@ public class Camera3D extends JFXPanel {
 		executor.shutdown();
 	}
 	
+	public void refreshCamera() {
+		Platform.runLater(new Runnable() {
+            public void run() {
+            	scene.updateCameraPosition();
+            }
+		});	
+	}
+	
 	public void refreshTrack() {
 		Platform.runLater(new Runnable() {
             public void run() {
-            	 world.refreshTrack();
+            	 world.refreshTracks();
             }
 		});	
 	}

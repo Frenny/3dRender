@@ -4,7 +4,7 @@ import javafx.scene.paint.Material;
 
 public class Cylinder extends javafx.scene.shape.Cylinder {
 	
-	public Cylinder(double[][] keypoints, Material material, double height) {
+	public Cylinder(double[][] keypoints, double height, Material material) {
 		double x = keypoints[5][0];
 		double z = keypoints[0][1];
 		double radius = keypoints[0][0] - x;
