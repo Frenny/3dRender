@@ -67,7 +67,7 @@ public class Camera3D extends JFXPanel {
 		  @Override
 		  public void run() {
 			  scene.updateCameraPosition();
-			  drawTrack();
+			  refreshTrack();
 		  }
 		}, 0, REFRESH_EVERY_MILLISECONDS, TimeUnit.MILLISECONDS);
 	}
@@ -76,7 +76,7 @@ public class Camera3D extends JFXPanel {
 		executor.shutdown();
 	}
 	
-	public void drawTrack() {
+	public void refreshTrack() {
 		Platform.runLater(new Runnable() {
             public void run() {
             	 world.refreshTrack();

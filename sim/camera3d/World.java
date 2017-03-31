@@ -73,17 +73,25 @@ public class World extends Group {
 			getChildren().remove(tyreTrack.get(0));
 			tyreTrack.remove(0);
 		}
-		for(double[] point : simCanvasTrack) {
-			if(!isTrackExists(tyreTrack, point)) {
-				Track track = new Track(point);
+		
+		int lastIndex = simCanvasTrack.size() - 1;
+		int lastTyreIndex = tyreTrack.size() - 1;
+		
+		if(lastIndex >= 0) {
+			double[] lastPoint = simCanvasTrack.get(lastIndex);
+			if(lastTyreIndex < 0) {
+				Track track = new Track(lastPoint);
 				tyreTrack.add(track);
 				addShape3D(track);
+			} else {
+				Track lastTrack = tyreTrack.get(lastTyreIndex);
+				if(lastTrack.getKeypoint() != lastPoint) {
+					Track track = new Track(lastPoint);
+					tyreTrack.add(track);
+					addShape3D(track);
+				}
 			}
 		}
-	}
-	
-	public boolean isTrackExists(final List<Track> list, final double[] keypoint){
-	    return list.stream().filter(o -> o.getKeypoint().equals(keypoint)).findFirst().isPresent();
 	}
 	
 	public void clearTrack() {
